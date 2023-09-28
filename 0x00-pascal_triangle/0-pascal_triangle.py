@@ -5,15 +5,17 @@
 
 
 def pascal_triangle(n):
-    list = []
     if n <= 0:
-        return list
-    else:
-        for i in range(n):
-            temp_list = []
-            for j in range(i + 1):
+        return []
+
+    triangle = []
+    for i in range(n):
+        row = []
+        for j in range(i + 1):
             if j == 0 or j == i:
-                temp_list.append(1)
+                row.append(1)
             else:
-                temp_list.append(list[i-1][j-1] + list[i-1][j])
-            list.append(temp_list)
+                row.append(triangle[i - 1][j - 1] + triangle[i - 1][j])
+        triangle.append(row)
+
+    return triangle
