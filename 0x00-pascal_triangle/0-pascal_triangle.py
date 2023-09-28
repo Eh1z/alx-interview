@@ -15,7 +15,7 @@ for i in range(n):
         temp_list.append(list[i-1][j-1] + list[i-1][j])
     list.append(temp_list)
 
-for in range(n):
+for i in range(n):
     for j in range(n-i-1):
         print(" ", end="")
     for j in range(i+1):
