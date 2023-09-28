@@ -4,7 +4,7 @@
 """
 
 
-n = 4
+n = int(input("Enter a number: "))
 list = []
 for i in range(n):
     temp_list = []
