@@ -13,7 +13,7 @@ def pascal_triangle(n):
         temp_list.append(1)
       else:
         temp_list.append(list[i-1][j-1] + list[i-1][j])
- list.append(temp_list)
+    list.append(temp_list)
 print(list)
 
               
