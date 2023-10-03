@@ -3,17 +3,21 @@
 0-pascal_triangle.py
 """
 
-
 def pascal_triangle(n):
-    list = []
+    """
+    Returns a list of integers
+    representing the Pascal Triangle of n
+    returns empty list if n <= 0
+    """
+    matrix = []
     if n <= 0:
-        return list
-    else:
-        for i in range(n):
-            temp_list = []
-            for j in range(i + 1):
-            if j == 0 or j == i:
-                temp_list.append(1)
-            else:
-                temp_list.append(list[i-1][j-1] + list[i-1][j])
-            list.append(temp_list)
+        return matrix
+    matrix = [[1]]
+    for i in range(1, n):
+        temp = [1]
+        for j in range(len(matrix[i - 1]) - 1):
+            curr = matrix[i - 1]
+            temp.append(matrix[i - 1][j] + matrix[i - 1][j + 1])
+        temp.append(1)
+        matrix.append(temp)
+    return matrix
